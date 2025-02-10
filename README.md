@@ -1,7 +1,7 @@
-# dailyinsightai
-Personalized Journaling &amp; Idea Management App leveraging generative AI.
-
 # DailyInsightAi
+
+### Personalized Journaling &amp; Idea Management App leveraging generative AI.
+
 This app is meant to be a personalized journaling and idea management application.
 By leveraging generative AI capabilities, DailyInsightAi will provide personalized feedback to the end user, offering insights, summaries, mood/trend analysis.
 It aims to help end users to refelct on their own experiences and improve areas in their lives.
