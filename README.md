@@ -1,5 +1,7 @@
 # DailyInsightAi
 
+## ![Architecture](./tests/DIAI_arch.png)
+
 ### Personalized Journaling &amp; Idea Management App leveraging generative AI.
 
 This app is meant to be a personalized journaling and idea management application.
