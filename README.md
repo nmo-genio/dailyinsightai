@@ -1,6 +1,6 @@
 # DailyInsightAi
 
-## ![Architecture](./tests/DIAI_arch.png)
+## ![Architecture](./resources/DIAI_arch.png)
 
 ### Personalized Journaling &amp; Idea Management App leveraging generative AI.
 
