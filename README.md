@@ -1,12 +1,14 @@
 # DailyInsightAi
 
-### Personalized Journaling &amp; Idea Management App leveraging generative AI.
+## ![Architecture](./resources/DIAI_arch.png)
+
+## Personalized Journaling &amp; Idea Management App leveraging generative AI.
 
 This app is meant to be a personalized journaling and idea management application.
 By leveraging generative AI capabilities, DailyInsightAi will provide personalized feedback to the end user, offering insights, summaries, mood/trend analysis.
 It aims to help end users to refelct on their own experiences and improve areas in their lives.
 
-## Proposed Features Iteration 1 - February 2025:
+### Proposed Features Iteration 1 - February 2025:
 - create text entry
 - create 2 colors for cover
 - create journal templates
@@ -14,16 +16,16 @@ It aims to help end users to refelct on their own experiences and improve areas 
 - web application
 
 
-## Advanced future functionalities:
+### Advanced future functionalities:
 - coach with AI
 - mood tracking (smiley face only)
 - visualization dashboards
 
-## Integration with other productivity tools like:
+### Integration with other productivity tools like:
 - photos
 - calendar
 
-## Others: 
+### Others: 
 - social media accounts (instagram, facebook)
 - encryption (secure)
 - password protection (private)
@@ -36,6 +38,6 @@ It aims to help end users to refelct on their own experiences and improve areas 
 - PDF Embed
 - Show outside temperature in your app (it's fun)
 
-## Multiplatform functionalities
+### Multiplatform functionalities
 DailyInsightAi will support desktop in web, Android, Apple devices.
 Sync across platform: start on one device, finish on another
