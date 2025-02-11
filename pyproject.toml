@@ -1,21 +1,19 @@
-[project]
+[tool.poetry]
 name = "dailyinsightai"
 version = "0.1.0"
-description = ""
-authors = [
-    {name = "Nicoleta Mocanu",email = "nicoleta.mocanu87@gmail.com"}
-]
+description = "This project aims to combine Python, MongoDB, AI to build a journaling/idea management app"
+authors = ["Nicoleta Mocanu <nicoleta.mocanu87@gmail.com>"]
 readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
-    "openai (>=1.61.1,<2.0.0)",
-    "pymongo (>=4.11,<5.0)",
-    "pandas (>=2.2.3,<3.0.0)",
-    "flask (>=3.1.0,<4.0.0)",
-    "fastapi (>=0.115.8,<0.116.0)",
-    "uvicorn (>=0.34.0,<0.35.0)"
-]
 
+[tool.poetry.dependencies]
+python = ">=3.13"
+openai = ">=1.61.1,<2.0.0"
+pymongo = ">=4.11,<5.0"
+pandas = ">=2.2.3,<3.0.0"
+flask = ">=3.1.0,<4.0.0"
+fastapi = ">=0.115.8,<0.116.0"
+uvicorn = ">=0.34.0,<0.35.0"
+python-dotenv = ">=1.0.1,<2.0.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -24,3 +22,6 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
 
+[[tool.poetry.packages]]
+include = "dailyinsightai"
+from = "src"

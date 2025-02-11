@@ -1,5 +1,6 @@
-# src/main.py
-from journaling import run_app
+# src/dailyinsightai/main.py
+
+from .journaling import run_app
 
 def main():
     print("Starting DailyInsightAI Journaling App...")
