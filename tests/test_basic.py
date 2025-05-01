@@ -8,9 +8,9 @@ import os
 
 @patch.dict(os.environ, {"OPENAI_API_KEY": "test_key"})
 @patch("dailyinsightai.ai_integration.ChatCompletion.create")
-def test_generate_insight_returns_text(mock_openai):
+def test_generate_insight_returns_text(mock_create):
     from dailyinsightai.ai_integration import generate_insight
-    mock_openai.return_value = {
+    mock_create.return_value = {
         "choices": [{"message": {"content": "Mocked insight"}}]
     }
 
