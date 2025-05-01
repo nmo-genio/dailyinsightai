@@ -4,11 +4,7 @@
 
 ---
 
-<<<<<<< HEAD
-## ![Architecture](./resources/DailyInsightAI Architecture.png)
-=======
 ## ![Architecture](./resources/DailyInsightAIArchitecture.png)
->>>>>>> main
 
 ---
 
@@ -69,19 +65,8 @@ poetry run python -m dailyinsightai.main
 This project was built with love for reflection, growth, and AI experimentation.  
 If you have feedback or ideas, feel free to open an issue or connect on [LinkedIn](https://www.linkedin.com/in/nicoletamocanu/).
 
-<<<<<<< HEAD
-## 🎥 Code Walkthrough
-
-![Code - main.py — dailyinsightai](./resources/code_main_demo.gif)
-
-> `Code - main.py — dailyinsightai`  
-> 🗓️ 30 April 2025  
-> ▶️ [**Watch Full Video**](https://loom.com/share/23bdbb05d9a248b7b26a34c1b20ed88b)
-<div style="position: relative; padding-bottom: 60.742407199100114%; height: 0;"><iframe src="https://www.loom.com/embed/23bdbb05d9a248b7b26a34c1b20ed88b?sid=16315134-210a-4c2c-809c-d288da112085" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-=======
 ## 🎥 Demo Video
 
 Click to watch a quick walkthrough of DailyInsight AI in action (Click the thumbnail below):
 
 [![Watch the video walkthrough](./resources/loom-thumbnail.png)](https://www.loom.com/share/23bdbb05d9a248b7b26a34c1b20ed88b)
->>>>>>> main
