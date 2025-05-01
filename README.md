@@ -4,7 +4,7 @@
 
 ---
 
-## ![Architecture](./resources/DailyInsightAI Architecture.png)
+## ![Architecture](./resources/DailyInsightAIArchitecture.png)
 
 ---
 
