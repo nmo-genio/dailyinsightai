@@ -1,0 +1,33 @@
+# GitHub Actions workflow to run pytest using Poetry
+name: Run Python Tests  #This appears in the Actions tab
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Run Pytest with Poetry
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3 # GitHub Actions workflow to run pytest using Poetry
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install Poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+
+    - name: Install dependencies
+      run: |
+        poetry install
+
+    - name: Run tests
+      run: |
+        poetry run pytest
