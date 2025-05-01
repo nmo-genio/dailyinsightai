@@ -6,7 +6,7 @@ authors = ["Nicoleta Mocanu <nicoleta.mocanu87@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.13"
+python = ">=3.11"
 openai = ">=1.61.1,<2.0.0"
 pymongo = ">=4.11,<5.0"
 pandas = ">=2.2.3,<3.0.0"

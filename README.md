@@ -1,5 +1,7 @@
 # DailyInsight AI
 
+![Tests](https://github.com/nmo-genio/dailyinsightai/actions/workflows/python-tests.yml/badge.svg)
+
 > Your personal journaling assistant powered by Generative AI — reflect better, grow smarter.
 
 ---
@@ -13,7 +15,7 @@
 **DailyInsight AI** is a personalized journaling and idea management app that uses GenAI to:
 - Generate insights and summaries from your journal entries
 - Store them securely in the cloud via MongoDB Atlas
-- Offer a lightweight, structured way to reflect daily — for personal growth, mood tracking, and idea capture
+- Offer a lightweight, structured way to reflect daily — fgit commit -m "or personal growth, mood tracking, and idea capture
 
 > 🧪 **Current version** is CLI-based. Web interface coming soon!
 
@@ -70,3 +72,5 @@ If you have feedback or ideas, feel free to open an issue or connect on [LinkedI
 Click to watch a quick walkthrough of DailyInsight AI in action (Click the thumbnail below):
 
 [![Watch the video walkthrough](./resources/loom-thumbnail.png)](https://www.loom.com/share/23bdbb05d9a248b7b26a34c1b20ed88b)
+
+
