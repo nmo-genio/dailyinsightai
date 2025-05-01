@@ -5,11 +5,11 @@ Contains a basic test case to validate AI integration by checking that `generate
 """
 from unittest.mock import patch
 import os
-from dailyinsightai.ai_integration import generate_insight
 
 @patch.dict(os.environ, {"OPENAI_API_KEY": "test_key"})
 @patch("dailyinsightai.ai_integration.ChatCompletion.create")
 def test_generate_insight_returns_text(mock_openai):
+    from dailyinsightai.ai_integration import generate_insight
     mock_openai.return_value = {
         "choices": [{"message": {"content": "Mocked insight"}}]
     }
