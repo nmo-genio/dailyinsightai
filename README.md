@@ -1,5 +1,7 @@
 # DailyInsight AI
 
+![Tests](https://github.com/nmo-genio/dailyinsightai/actions/workflows/python-tests.yml/badge.svg)
+
 > Your personal journaling assistant powered by Generative AI — reflect better, grow smarter.
 
 ---
