@@ -69,4 +69,4 @@ If you have feedback or ideas, feel free to open an issue or connect on [LinkedI
 
 Click to watch a quick walkthrough of DailyInsight AI in action:
 
-[![Watch the video walkthrough](https://cdn.loom.com/sessions/thumbnails/23bdbb05d9a248b7b26a34c1b20ed88b-with-preview.png)](https://www.loom.com/share/23bdbb05d9a248b7b26a34c1b20ed88b)
+[![Watch the video walkthrough](./resources/loom-thumbnail.png)](https://www.loom.com/share/23bdbb05d9a248b7b26a34c1b20ed88b)
