@@ -29,7 +29,7 @@ const JournalEntry: React.FC<JournalEntryProps> = () => {
       
       if (response.data.success) {
         setEntryId(response.data.entry_id);
-        setMessage('Journal entry saved successfully!');
+        setMessage('Journal entry saved successfully! Your insights are secure.');
         setContent('');
         setTags('');
       }
@@ -105,109 +105,112 @@ const JournalEntry: React.FC<JournalEntryProps> = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4">
-      {/* Simple Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">DailyInsight AI</h1>
-        <p className="text-gray-600">Your intelligent journaling companion</p>
-      </div>
-
-      {/* Main Card - Simple and Clean */}
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+    <div className="main-container relative z-10">
+      <header className="text-center">
+        <h1 className="header-title">DailyInsight AI</h1>
+        <p className="header-subtitle">Your intelligent journaling and idea companion</p>
+      </header>
+      
+      <main className="card">
+        <h2 className="form-label text-xl mb-6 font-semibold">Today's Journal Entry</h2>
         
-        {/* Journal Entry Form */}
-        <div className="space-y-6">
-          <div>
-            <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-2">
-              Today's Journal Entry
-            </label>
+        <form>
+          <div className="mb-6">
+            <label className="sr-only" htmlFor="journal-entry">Journal Entry</label>
             <textarea
-              id="content"
+              className="textarea"
+              id="journal-entry"
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              rows={8}
-              placeholder="What's on your mind today?"
+              placeholder="What's on your mind today? Reflect, dream, and discover..."
             />
           </div>
-
-          <div>
-            <label htmlFor="tags" className="block text-sm font-medium text-gray-700 mb-2">
-              Tags (comma-separated)
-            </label>
+          
+          <div className="mb-8">
+            <label className="form-label" htmlFor="tags">Tags (comma-separated)</label>
             <input
+              className="input"
               id="tags"
               type="text"
               value={tags}
               onChange={(e) => setTags(e.target.value)}
-              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="personal, work, ideas..."
+              placeholder="e.g. personal, work, ideas, gratitude"
             />
           </div>
-
-          {/* Simple Button Group */}
-          <div className="flex flex-wrap gap-3">
-            <button
-              onClick={handleSubmit}
-              disabled={loading}
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {loading ? 'Saving...' : 'Save Entry'}
-            </button>
-
-            <div className="flex items-center gap-2">
-              <input
-                type="file"
-                id="file-upload"
-                onChange={handleFileChange}
-                className="hidden"
-              />
-              <label
-                htmlFor="file-upload"
-                className="px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 cursor-pointer"
+          
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center flex-wrap gap-4">
+              <button
+                className="btn btn-primary"
+                type="button"
+                onClick={handleSubmit}
+                disabled={loading}
               >
-                Select File
-              </label>
-              {file && (
-                <button
-                  onClick={handleFileUpload}
-                  disabled={loading}
-                  className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  Upload {file.name}
+                <span className="material-icons btn-icon">save</span>
+                {loading ? 'Saving...' : 'Save Entry'}
+              </button>
+              
+              <div className="file-input-wrapper">
+                <button className="btn btn-secondary" type="button">
+                  <span className="material-icons btn-icon">attach_file</span>
+                  Attach File
                 </button>
+                <input
+                  id="file-upload"
+                  type="file"
+                  onChange={handleFileChange}
+                />
+              </div>
+              
+              {file && (
+                <>
+                  <span className="file-input-label">
+                    {file.name}
+                  </span>
+                  <button
+                    className="btn btn-primary"
+                    type="button"
+                    onClick={handleFileUpload}
+                    disabled={loading}
+                  >
+                    <span className="material-icons btn-icon">cloud_upload</span>
+                    {loading ? 'Uploading...' : 'Upload'}
+                  </button>
+                </>
               )}
             </div>
-
+            
             <button
+              className="btn btn-orange"
+              type="button"
               onClick={getInsight}
               disabled={loading || !entryId}
-              className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
             >
+              <span className="material-icons btn-icon">auto_awesome</span>
               {loading ? 'Generating...' : 'Get AI Insight'}
             </button>
           </div>
-
-          {/* Messages */}
-          {message && (
-            <div className={`p-4 rounded-md ${
-              message.includes('Error') 
-                ? 'bg-red-50 text-red-700 border border-red-200' 
-                : 'bg-green-50 text-green-700 border border-green-200'
-            }`}>
-              {message}
+        </form>
+        
+        {message && (
+          <div className={message.includes('Error') ? 'error-message' : 'success-message'}>
+            <span className={`material-icons ${message.includes('Error') ? 'error-icon' : 'success-icon'}`}>
+              {message.includes('Error') ? 'error' : 'check_circle'}
+            </span>
+            <span>{message}</span>
+          </div>
+        )}
+        
+        {insight && (
+          <div className="success-message">
+            <span className="material-icons success-icon">lightbulb</span>
+            <div>
+              <strong>AI Insight:</strong>
+              <div className="mt-2" style={{whiteSpace: 'pre-wrap'}}>{insight}</div>
             </div>
-          )}
-
-          {/* AI Insight */}
-          {insight && (
-            <div className="mt-6 p-4 bg-gray-50 rounded-md border border-gray-200">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">AI Insight</h3>
-              <p className="text-gray-700 whitespace-pre-wrap">{insight}</p>
-            </div>
-          )}
-        </div>
-      </div>
+          </div>
+        )}
+      </main>
     </div>
   );
 };
