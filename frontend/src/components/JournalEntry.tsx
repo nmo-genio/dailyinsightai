@@ -138,8 +138,8 @@ const JournalEntry: React.FC<JournalEntryProps> = () => {
             />
           </div>
           
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center flex-wrap gap-4">
+          <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', marginTop: '2rem'}}>
+            <div style={{display: 'flex', alignItems: 'center', gap: '1rem'}}>
               <button
                 className="btn btn-primary"
                 type="button"
@@ -161,23 +161,6 @@ const JournalEntry: React.FC<JournalEntryProps> = () => {
                   onChange={handleFileChange}
                 />
               </div>
-              
-              {file && (
-                <>
-                  <span className="file-input-label">
-                    {file.name}
-                  </span>
-                  <button
-                    className="btn btn-primary"
-                    type="button"
-                    onClick={handleFileUpload}
-                    disabled={loading}
-                  >
-                    <span className="material-icons btn-icon">cloud_upload</span>
-                    {loading ? 'Uploading...' : 'Upload'}
-                  </button>
-                </>
-              )}
             </div>
             
             <button
@@ -190,6 +173,23 @@ const JournalEntry: React.FC<JournalEntryProps> = () => {
               {loading ? 'Generating...' : 'Get AI Insight'}
             </button>
           </div>
+          
+          {file && (
+            <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1rem'}}>
+              <span className="file-input-label">
+                Selected: {file.name}
+              </span>
+              <button
+                className="btn btn-primary"
+                type="button"
+                onClick={handleFileUpload}
+                disabled={loading}
+              >
+                <span className="material-icons btn-icon">cloud_upload</span>
+                {loading ? 'Uploading...' : 'Upload'}
+              </button>
+            </div>
+          )}
         </form>
         
         {message && (
