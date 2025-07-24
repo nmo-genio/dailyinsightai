@@ -2,6 +2,41 @@
 
 > Your personal journaling assistant powered by Generative AI — reflect better, grow smarter.
 
+## 📚 Table of Contents
+- [📋 Recent Updates](#-recent-updates)
+- [🧠 What is DailyInsight AI?](#-what-is-dailyinsight-ai)
+- [🚀 Features](#-features-current-iteration)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [⚙️ Setup Instructions](#️-setup-instructions)
+- [🤝 Contributing](#-contributing)
+- [👩‍💻 Built by Nicoleta Mocanu](#-built-by-nicoleta-mocanu)
+- [🎥 Demo Video](#-demo-video)
+
+## ![](./resources/dailyInsightAi.png)
+
+## 📋 Recent Updates
+
+### Update July 24, 2025
+- **🎨 Complete UI Redesign**: Implemented the Stitch Google design system with warm color palette
+- **🔧 Fixed Tailwind CSS v4 Configuration**: Resolved PostCSS compilation issues with @tailwindcss/postcss plugin
+- **✨ Enhanced User Interface**:
+  - Added Material Design Icons integration
+  - Implemented Google Fonts (Lora serif for headings, Inter sans-serif for body text)
+  - Created custom CSS variables for consistent theming
+  - Added subtle background decorative elements
+- **🎯 Improved Button Layout**:
+  - Aligned Save Entry and Attach File buttons on the same row
+  - Positioned Get AI Insight button on the right with orange highlight color
+  - Added proper spacing between form fields and buttons
+  - Implemented responsive flexbox layout with proper gap spacing
+- **📱 Better User Experience**:
+  - Clean file upload interface that shows selected file name
+  - Consistent hover effects and button states
+  - Professional color scheme with warm earth tones
+  - Improved visual hierarchy and typography
+
+*New clean interface with properly aligned buttons and professional styling*
+
 ---
 
 ## ![Architecture](./resources/DailyInsightAIArchitecture.png)
@@ -160,32 +195,6 @@ We follow the [Contributor Covenant](https://www.contributor-covenant.org/) v2.1
 
 This project was built with love for reflection, growth, and AI experimentation.  
 If you have feedback or ideas, feel free to open an issue or connect on [LinkedIn](https://www.linkedin.com/in/nicoletamocanu/).
-
----
-
-## 📋 Recent Updates
-
-### Update July 24, 2025
-- **🎨 Complete UI Redesign**: Implemented the Stitch Google design system with warm color palette
-- **🔧 Fixed Tailwind CSS v4 Configuration**: Resolved PostCSS compilation issues with @tailwindcss/postcss plugin
-- **✨ Enhanced User Interface**:
-  - Added Material Design Icons integration
-  - Implemented Google Fonts (Lora serif for headings, Inter sans-serif for body text)
-  - Created custom CSS variables for consistent theming
-  - Added subtle background decorative elements
-- **🎯 Improved Button Layout**:
-  - Aligned Save Entry and Attach File buttons on the same row
-  - Positioned Get AI Insight button on the right with orange highlight color
-  - Added proper spacing between form fields and buttons
-  - Implemented responsive flexbox layout with proper gap spacing
-- **📱 Better User Experience**:
-  - Clean file upload interface that shows selected file name
-  - Consistent hover effects and button states
-  - Professional color scheme with warm earth tones
-  - Improved visual hierarchy and typography
-
-![DailyInsight AI Interface](https://github.com/user-attachments/assets/your-screenshot-url-here)
-*New clean interface with properly aligned buttons and professional styling*
 
 ---
 
