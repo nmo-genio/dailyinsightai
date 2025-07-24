@@ -1,15 +1,23 @@
-"""
-ai_integration.py
+"""OpenAI integration helpers used to generate insights for user journal text."""
 
-Handles communication with the OpenAI API.
-Defines the `generate_insight` function which takes user input and returns a generated insight using the Chat API.
-"""
-
-import openai
 import os
-from dotenv import load_dotenv
+
+try:  # pragma: no cover - optional dependency for the tests
+    import openai
+except Exception:  # fall back to the stub bundled in the repo
+    import openai  # type: ignore
+
+try:  # pragma: no cover - dotenv might not be installed in CI
+    from dotenv import load_dotenv
+except Exception:  # pragma: no cover - create a no-op if missing
+
+    def load_dotenv(*_args, **_kwargs):
+        """Fallback load_dotenv when python-dotenv is not available."""
+        return None
+
 
 load_dotenv()
+
 
 # src/dailyinsightai/ai_integration.py
 def generate_insight(text: str) -> str:
@@ -47,10 +55,10 @@ def generate_insight(text: str) -> str:
 
 class OpenAIClient:
     """OpenAI client wrapper for the API"""
-    
+
     def __init__(self):
         self.client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-    
+
     def generate_insight(self, text: str) -> str:
         """Generate insight using the existing function"""
         return generate_insight(text)
