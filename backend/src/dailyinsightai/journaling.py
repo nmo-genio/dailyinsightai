@@ -9,8 +9,18 @@ Manages user interaction, generates insights, saves entries to MongoDB, and prin
 # from src.dailyinsightai.db import init_db, insert_entry, get_all_entries
 
 import os
+from datetime import datetime
+from typing import List, Optional
 from .ai_integration import generate_insight
 from .db import init_db, insert_entry, get_all_entries
+
+
+class JournalEntry:
+    """Represents a journal entry"""
+    def __init__(self, content: str, tags: Optional[List[str]] = None, date: Optional[datetime] = None):
+        self.content = content
+        self.tags = tags or []
+        self.date = date or datetime.now()
 
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 

@@ -7,7 +7,9 @@ Defines the `generate_insight` function which takes user input and returns a gen
 
 import openai
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 # src/dailyinsightai/ai_integration.py
 def generate_insight(text: str) -> str:
@@ -41,3 +43,14 @@ def generate_insight(text: str) -> str:
     except openai.OpenAIError as e:
         print(f"OpenAI API error: {e}")
         return "Sorry, there was an error generating the insight."
+
+
+class OpenAIClient:
+    """OpenAI client wrapper for the API"""
+    
+    def __init__(self):
+        self.client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    
+    def generate_insight(self, text: str) -> str:
+        """Generate insight using the existing function"""
+        return generate_insight(text)
