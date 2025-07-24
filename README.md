@@ -61,20 +61,10 @@ cd dailyinsightai
 # Navigate to backend directory
 cd backend
 
-# Create virtual environment
-python -m venv venv
+# Install Python dependencies using Poetry
+poetry install
 
-# Activate virtual environment
-# On macOS/Linux:
-source venv/bin/activate
-# On Windows:
-# venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Create .env file with your credentials
-# Copy .env.example to .env and fill in your values
+# Create `.env` with your credentials
 cp .env.example .env
 
 # Run the backend server
@@ -104,7 +94,8 @@ The frontend will be available at http://localhost:3000 and the backend API at h
 ### 4. Run the CLI App (Legacy)
 
 ```bash
-# From the root directory
+# From the backend directory
+cd backend
 poetry install
 poetry run python -m dailyinsightai.main
 ```
@@ -133,16 +124,18 @@ We love community contributions! Please follow these guidelines to keep the proj
 
 2. Install development dependencies and pre‑commit hooks:
 
-   ```bash
-   poetry install --with dev
-   pre-commit install
-   ```
+```bash
+cd backend
+poetry install --with dev
+pre-commit install
+```
 
 3. Make your changes and run lint + tests locally:
 
-   ```bash
-   poetry run task lint && poetry run pytest
-   ```
+```bash
+cd backend
+poetry run task lint && poetry run pytest
+```
 
 4. Commit using Conventional Commits and push your branch:
 
