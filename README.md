@@ -2,6 +2,8 @@
 
 > Your personal journaling assistant powered by Generative AI — reflect better, grow smarter.
 
+## ![](./resources/dailyInsightAi.png)
+
 ---
 
 ## ![Architecture](./resources/DailyInsightAIArchitecture.png)
