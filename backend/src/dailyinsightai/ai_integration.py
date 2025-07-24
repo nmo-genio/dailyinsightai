@@ -5,9 +5,33 @@ Handles communication with the OpenAI API.
 Defines the `generate_insight` function which takes user input and returns a generated insight using the Chat API.
 """
 
-import openai
+try:
+    import openai
+except ModuleNotFoundError:  # pragma: no cover - openai may not be installed in CI
+    from types import SimpleNamespace
+
+    class DummyClient:
+        """Fallback OpenAI client used when openai package is unavailable."""
+
+        def __init__(self, *_, **__):
+            pass
+
+        class chat:
+            class completions:
+                @staticmethod
+                def create(*_, **__):
+                    raise RuntimeError("OpenAI package not installed")
+
+    class OpenAIError(Exception):
+        """Raised when OpenAI operations fail with no library installed."""
+
+    openai = SimpleNamespace(OpenAI=DummyClient, OpenAIError=OpenAIError)
 import os
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+except ModuleNotFoundError:  # pragma: no cover - python-dotenv optional in CI
+    def load_dotenv(*_, **__):
+        return False
 
 load_dotenv()
 

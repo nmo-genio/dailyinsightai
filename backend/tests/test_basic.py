@@ -37,8 +37,8 @@ def test_generate_insight_returns_text(mock_openai_class):
 @patch.dict(os.environ, {"OPENAI_API_KEY": "test_key"})
 @patch("dailyinsightai.ai_integration.openai.OpenAI")
 def test_generate_insight_handles_openai_error(mock_openai_class):
-    from dailyinsightai.ai_integration import generate_insight
-    from openai import OpenAIError
+    from dailyinsightai.ai_integration import generate_insight, openai
+    OpenAIError = getattr(openai, "OpenAIError", Exception)
 
     # Simulate OpenAI client raising an error
     mock_client = MagicMock()
