@@ -1,7 +1,5 @@
 # DailyInsight AI
 
-![Tests](https://github.com/nmo-genio/dailyinsightai/actions/workflows/python-tests.yml/badge.svg)
-
 > Your personal journaling assistant powered by Generative AI — reflect better, grow smarter.
 
 ---
@@ -17,8 +15,6 @@
 - Store them securely in the cloud via MongoDB Atlas
 - Offer a lightweight, structured way to reflect daily — for personal growth, mood tracking, and idea capture
 
-> 🧪 **Current version** is CLI-based. Web interface coming soon!
-
 ---
 
 ## 🚀 Features (Current Iteration)
@@ -27,7 +23,6 @@
 - 🧠 Get AI-generated insights (via OpenAI integration)
 - 💾 Store data securely in MongoDB Atlas
 - 🔐 Manage secrets and config via environment variables in `.env` (e.g., OpenAI key, Mongo URI, and DEBUG mode). Secrets are controlled using environment variables, and debug output can be toggled.
-- 🧪 Automated testing using Pytest and GitHub Actions for continuous integration
 - 📝 Clear, structured docstrings across all modules
 - 🛠️ Project scaffolded using Poetry (dependency + packaging)
 
@@ -38,12 +33,15 @@
 | Layer         | Backend                        | Frontend                      |
 |---------------|--------------------------------|-------------------------------|
 | Language      | Python 3.13                    | TypeScript/JavaScript        |
-| Framework     | FastAPI                        | React 19                      |
+| Framework     | FastAPI                        | React with TypeScript        |
 | AI Integration| OpenAI GPT (via `openai` lib)  | -                            |
 | Database      | MongoDB Atlas (via `pymongo`)  | -                            |
-| Styling       | -                              | Tailwind CSS v4 (via CRACO)  |
+| Styling       | -                              | Custom CSS + Tailwind CSS v4 |
+| Icons & Fonts | -                              | Material Icons, Google Fonts |
+| HTTP Client   | -                              | Axios                        |
 | Build Tools   | Poetry, python-dotenv, pytest | CRACO, Create React App      |
-| Testing       | Pytest, GitHub Actions        | React Testing Library        |
+| Design System | -                              | Stitch Google inspired theme |
+| Testing       | Pytest                         | React Testing Library        |
 
 
 ## ⚙️ Setup Instructions
@@ -163,8 +161,36 @@ We follow the [Contributor Covenant](https://www.contributor-covenant.org/) v2.1
 This project was built with love for reflection, growth, and AI experimentation.  
 If you have feedback or ideas, feel free to open an issue or connect on [LinkedIn](https://www.linkedin.com/in/nicoletamocanu/).
 
+---
+
+## 📋 Recent Updates
+
+### Update July 24, 2025
+- **🎨 Complete UI Redesign**: Implemented the Stitch Google design system with warm color palette
+- **🔧 Fixed Tailwind CSS v4 Configuration**: Resolved PostCSS compilation issues with @tailwindcss/postcss plugin
+- **✨ Enhanced User Interface**:
+  - Added Material Design Icons integration
+  - Implemented Google Fonts (Lora serif for headings, Inter sans-serif for body text)
+  - Created custom CSS variables for consistent theming
+  - Added subtle background decorative elements
+- **🎯 Improved Button Layout**:
+  - Aligned Save Entry and Attach File buttons on the same row
+  - Positioned Get AI Insight button on the right with orange highlight color
+  - Added proper spacing between form fields and buttons
+  - Implemented responsive flexbox layout with proper gap spacing
+- **📱 Better User Experience**:
+  - Clean file upload interface that shows selected file name
+  - Consistent hover effects and button states
+  - Professional color scheme with warm earth tones
+  - Improved visual hierarchy and typography
+
+![DailyInsight AI Interface](https://github.com/user-attachments/assets/your-screenshot-url-here)
+*New clean interface with properly aligned buttons and professional styling*
+
+---
+
 ## 🎥 Demo Video
 
-Click to watch a quick walkthrough of DailyInsight AI in action (Click the thumbnail below):
+Click to watch a quick walkthrough of DailyInsight AI CLI in action (Click the thumbnail below):
 
 [![Watch the video walkthrough](./resources/loom-thumbnail.png)](https://www.loom.com/share/23bdbb05d9a248b7b26a34c1b20ed88b)
