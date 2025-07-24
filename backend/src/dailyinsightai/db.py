@@ -7,9 +7,11 @@ Includes functions to insert and retrieve journal entries.
 
 # src/dailyinsightai/db.py
 import os
+from datetime import datetime
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 from dotenv import load_dotenv
+from bson import ObjectId
 
 # Load environment variables from .env file
 load_dotenv()
@@ -94,3 +96,44 @@ def get_all_entries(db):
             print(entry)
 
     return entries
+
+
+class MongoDB:
+    """MongoDB wrapper class for the API"""
+    
+    def __init__(self):
+        self.db = init_db()
+    
+    def save_entry(self, entry):
+        """Save a journal entry to the database"""
+        collection = self.db.journal
+        document = {
+            "content": entry.content,
+            "tags": entry.tags,
+            "date": entry.date,
+            "created_at": datetime.utcnow(),
+        }
+        result = collection.insert_one(document)
+        return result.inserted_id
+    
+    def get_entry(self, entry_id):
+        """Get a single entry by ID"""
+        collection = self.db.journal
+        return collection.find_one({"_id": ObjectId(entry_id)})
+    
+    def update_entry_insight(self, entry_id, insight):
+        """Update an entry with AI insight"""
+        collection = self.db.journal
+        collection.update_one(
+            {"_id": ObjectId(entry_id)},
+            {"$set": {"insight": insight}}
+        )
+    
+    def get_all_entries(self):
+        """Get all entries"""
+        collection = self.db.journal
+        entries = []
+        for entry in collection.find():
+            entry["_id"] = str(entry["_id"])
+            entries.append(entry)
+        return entries
