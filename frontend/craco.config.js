@@ -7,4 +7,11 @@ module.exports = {
       ],
     },
   },
+  devServer: (devServerConfig) => {
+    delete devServerConfig.onAfterSetupMiddleware;
+    delete devServerConfig.onBeforeSetupMiddleware;
+    delete devServerConfig.https;
+    return devServerConfig;
+  },
+
 };
